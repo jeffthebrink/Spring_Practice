@@ -6,6 +6,15 @@
 </head>
 <body>
 
+{{^person}}
+    <form action="/add-person" method="post">
+        <input type="text" placeholder="Enter your name" name="name">
+        <input type="text" placeholder="Enter your city" name="city">
+        <input type="text" placeholder="Enter your age" name="age">
+        <button type="submit">Submit</button>
+    </form>
+{{/person}}
+
 {{#person}}
 
     {{name}} from {{city}}, {{age}} years old.

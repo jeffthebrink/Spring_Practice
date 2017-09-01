@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SpringPracticeController {
 
     @RequestMapping(path = "/person", method = RequestMethod.GET)
-    public String person(Model model, String name, String city, int age) {
+    public String person() {
+        return "person";
+    }
+
+    @RequestMapping(path = "/add-person", method = RequestMethod.POST)
+    public String addPerson(Model model, String name, String city, Integer age) {
         Person person = new Person(name, city, age);
         model.addAttribute("person", person);
         return "person";
